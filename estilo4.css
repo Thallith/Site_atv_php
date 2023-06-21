@@ -1,0 +1,57 @@
+html {
+    background-color: rgb(255, 131, 228);
+}
+
+h2 {
+    color: rgb(184, 16, 16);
+    font-size: 33px;
+}
+
+form {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.btn input {
+
+    background-color: #c214a5;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+
+    margin: 0 15px;
+    padding: 10px 35px;
+
+    border: 2px solid #a200b8;
+    border-radius: 25px;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 0%;
+        height: 0%;
+
+       
+
+        transition: .7ease;
+    }
+
+    &::before {
+        width: 0;
+        height: 100%;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+        }
+}

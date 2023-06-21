@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Menu Animado</title>
+  <style>
+    /* Estilos gerais */
+
+    /*body: Define o estilo para o elemento body da página. Neste caso, define a fonte como "Arial, sans-serif"*/
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3d3b3b;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    /*Estilo dos exercícios*/
+    .exercise {
+      margin-bottom: 30px;
+    }
+
+    .exercise h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .exercise p {
+      line-height: 1.5;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* Estilos do menu */
+
+    /* #menu: Define o estilo para o elemento com o id "menu", que é a div que envolve o menu. Define a cor de fundo como "#333" (um tom de cinza escuro) e a cor do texto como "#fff" (branco). Também define o overflow como hidden para ocultar qualquer conteúdo que ultrapasse os limites da div. O width é definido como 100% para ocupar toda a largura disponível*/
+
+    #menu {
+      background-color: #333;
+      height: 50px;
+      color: #fff;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* #menu ul: Define o estilo para a lista não ordenada (ul) dentro do menu. Remove o estilo de marcadores de lista com list-style-type: none, remove as margens e preenchimentos padrão com margin: 0 e padding: 0, respectivamente. O overflow é definido como hidden para ocultar qualquer conteúdo que ultrapasse os limites da lista. Além disso, display: flex é usado para tornar os itens da lista alinhados horizontalmente */
+
+    #menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* #menu li: Define o estilo para os itens da lista (li) dentro do menu. O float: left faz com que os itens da lista fiquem dispostos para a esquerda horizontalmente */
+
+    #menu li {
+      float: left;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* #menu li a: Define o estilo para os links (a) dentro dos itens da lista do menu. Eles são exibidos como blocos com display: block. A cor do texto é definida como branco (color: white). O text-align é center para centralizar o texto horizontalmente dentro dos links. O padding define o espaçamento interno dos links (14 pixels acima e abaixo, 16 pixels à esquerda e à direita). A propriedade text-decoration é definida como none para remover qualquer decoração de texto, como sublinhado */
+
+    #menu li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+
+    /* Estilos da animação */
+
+    /* #menu li a:hover: Define o estilo para os links do menu quando o mouse está sobre eles. Neste caso, define a cor de fundo como "#555" (um tom de cinza mais escuro) quando o mouse está sobre os links */
+
+    #menu li a:hover {
+      background-color: #555;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* #menu li a.active: Define o estilo para o link do menu que está ativo. Neste caso, define a cor de fundo como "#4CAF50" (um tom de verde) para indicar visualmente o link ativo */
+
+    #menu li a.active {
+      background-color: #4CAF50;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+
+    /* Animação */
+
+    /* #menu li a: Repetindo a definição anterior para #menu li a, este bloco de código adiciona estilos para a animação dos links do menu. O position: relative define o posicionamento do elemento como relativo em relação à sua posição normal. A propriedade transition: all 0.3s especifica que todas as propriedades CSS devem ter uma transição de 0.3 segundos quando ocorrer uma alteração */
+
+    #menu li a {
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* #menu li a:before: Este bloco de código adiciona um elemento pseudo-elemento ::before aos links do menu. Ele é posicionado absolutamente (position: absolute) em relação ao link pai. Ele ocupa toda a largura (width: 100%), tem 2 pixels de altura (height: 2px), é colocado no fundo (bottom: 0) e à esquerda (left: 0) do link. A cor de fundo é definida como "#4CAF50" (verde) e a visibilidade é oculta (visibility: hidden). A propriedade transform: scaleX(0) define que o elemento deve ter uma escala horizontal de 0 (invisível). A propriedade transition: all 0.3s especifica que todas as propriedades CSS devem ter uma transição de 0.3 segundos quando ocorrer uma alteração */
+
+    #menu li a:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #4CAF50;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s;
+    }
+
+    /*----------------------------------------------------------------------------------------*/
+
+    /* #menu li a:hover:before: Define o estilo para o elemento pseudo-elemento ::before quando o mouse está sobre o link do menu. Define a visibilidade como visível (visibility: visible) e a escala horizontal como 1 (transform: scaleX(1)), tornando o elemento visível e com a mesma largura do link */
+
+    #menu li a:hover:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="menu">
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="atv1.php">1&deg;exer</a></li>
+      <li><a href="atv2.php">2&deg;exer</a></li>
+      <li><a href="atv3.php">3&deg;exer</a></li>
+      <li><a href="atv4.php">4&deg;exer</a></li>
+      <li><a href="atv5.php">5&deg;exer</a></li>
+      <li><a href="atv6.php">6&deg;exer</a></li>
+      <li><a href="atv7.php">7&deg;exer</a></li>
+      <li><a href="atv8.php">8&deg;exer</a></li>
+      <li><a href="atv9.php">9&deg;exer</a></li>
+      <li><a href="atv10.php">10&deg;exer</a></li>
+    </ul>
+  </div>
+ <br>
+  <div class="container">
+    <h1>Descri&ccedil;&atilde;o dos exerc&iacute;cios</h1>
+
+    <!-- Exercício 1 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 1: Gerador de sequ&ecirc;ncia: N&uacute;meros e Produto </h4>
+      <p>Criar uma p&aacute;gina em PHP que leia um n&uacute;mero e imprima todos de 1 at&eacute; o n&uacute;mero
+        informado e o seu produto.</p>
+    </div>
+
+    <!-- Exercício 2 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 2: Palavra Multiplicada</h4>
+      <p>Criar uma p&aacute;gina em PHP para o usu&aacute;rio entrar com o n&uacute;mero de vezes que se deseja imprimir
+        a palavra SOL e imprimir.</p>
+    </div>
+
+    <!-- Exercício 3 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 3: Soma dos positivos e Contagem dos negativos.</h4>
+      <p>Criar uma p&aacute;gina em PHP para o usu&aacute;rio entrar com 20 n&uacute;meros e imprimir a soma dos
+        positivos e o total de n&uacute;meros negativos.</p>
+    </div>
+
+    <!-- Exercício 4 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 4: Intervalo de n&uacute;meros</h4>
+      <p>Criar uma p&aacute;gina em PHP para ler v&aacute;rios n&uacute;meros e informar quantos n&uacute;meros entre
+        100 e 200 foram digitados.</p>
+    </div>
+
+    <!-- Exercício 5 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 5: Altura em anos</h4>
+      <p>Chico tem 1,50m e cresce 2 cm por ano, enquanto Juca tem 1,10m e cresce 3cm por ano. Construir um algoritmo que
+        calcule e imprima quantos anos ser&atilde;o necess&aacute;rios para que Juca seja maior que Chico.</p>
+    </div>
+
+    <!-- Exercício 6 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 6: C&aacute;lculo de tempo</h4>
+      <p> Na usina de Angra dos Reis, os t&eacute;cnicos analisam a perda de massa de um material radioativo. Sabendo-se
+        que este perde 25% de sua massa a cada 30 segundos, criar um algoritmo que imprima o tempo necess&aacute;rio
+        para que a massa desse material seja menor que 0.10.</p>
+    </div>
+
+    <!-- Exercício 7 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 7: Positivos ou Negativos</h4>
+      <p>Armazenar 15 n&uacute;meros inteiros em um vetor e imprimir uma mensagem contendo o n&uacute;mero e uma das
+        mensagens: par ou &iacute;mpar.</p>
+    </div>
+
+    <!-- Exercício 8 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 8: Gera&ccedil;&atilde;o e Impress&atilde;o de n&uacute;meros</h4>
+      <p>Crie uma p&aacute;gina em PHP que receba um valor qualquer e imprima os valores de 0 at&eacute; o valor
+        recebido.</p>
+    </div>
+
+    <!-- Exercício 9 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 9: C&aacute;lculo de Fatoriais</h4>
+      <p>Crie uma p&aacute;gina em PHP que receba um valor qualquer e calcule o seu fatorial(!).</p>
+    </div>
+
+    <!-- Exercício 10 -->
+    <div class="exercise">
+      <h4>Exerc&iacute;cio 10: Intervalo de Valores</h4>
+      <p>Crie uma p&aacute;gina em PHP que receba dois valores e imprime todos os valores intermedi&aacute;rios a ele.</p>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

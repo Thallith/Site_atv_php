@@ -1,0 +1,16 @@
+body{
+background: linear-gradient(to left,#b09ffa, #ffff);
+}
+
+h2{
+    color: #fff;
+    font-size: 40px;
+    border-top: #000;
+   
+}
+
+form {
+    color: #fff;
+    font-size: 25px;
+}
+ 

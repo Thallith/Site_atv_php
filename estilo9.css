@@ -1,0 +1,39 @@
+html {
+    background-color: rgb(255, 241, 47);
+}
+
+h2 {
+    color: rgb(228, 152, 39);
+    font-size: 33px;
+    font-weight: bold;
+    position: relative;
+  
+}
+
+form {
+    color: rgb(235, 221, 38);
+    font-size: 25px;
+}
+
+.btn input {
+    btn.hover{
+    background-color: #e9a91e;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+
+    margin: 0 15px;
+    padding: 10px 35px;
+
+    border: 2px solid #ffac30;
+    border-radius: 15px;
+
+    position: relative;
+    background-repeat: no-repeat;
+    margin-top: 15px;
+}
+}
